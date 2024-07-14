@@ -48,7 +48,7 @@
 
 - type: entity
   name: "Спавнер Дикой Змеи"
-  id: SpawnMobSnakeDick
+  id: SpawnMobSnake220
   parent: MarkerBase
   components:
   - type: Sprite
@@ -58,7 +58,7 @@
       sprite: Mobs/Animals/snake.rsi
   - type: ConditionalSpawner
     prototypes:
-    - MobSnakeDick
+    - MobSnake220
   - type: TimedDespawn 
     lifetime: 5
 
