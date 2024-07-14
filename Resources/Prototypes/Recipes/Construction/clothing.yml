@@ -36,8 +36,8 @@
   id: BoneHelmet
   graph: BoneHelmet
   startNode: start
-  targetNode: 1new-clothing
-  category: construction-category-clothing
+  targetNode: helmet
+  category: 1new-clothing
   description: Helmet made of bones.
   icon: { sprite: Clothing/Head/Helmets/bone_helmet.rsi, state: icon }
   objectType: Item

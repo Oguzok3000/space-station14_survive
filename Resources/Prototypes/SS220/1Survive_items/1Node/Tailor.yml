@@ -1,6 +1,39 @@
 # ▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮
 # ВЕРЁВКИ
 
+# Тетива
+- type: construction
+  name: "Тетива"
+  id: bowstring
+  graph: bowstring
+  startNode: start
+  targetNode: bowstring
+  category: 1new-ingredients
+  description: "Нужна для создания лука"
+  icon: { sprite: Objects/Tools/cable-coils.rsi, state: coil-20 }
+  objectType: Item
+
+- type: constructionGraph
+  id: bowstring
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: bowstring
+          steps:
+            - tag: Cable
+              name: "Верёвка"
+              icon:
+                sprite: Objects/Tools/cable-coils.rsi
+                state: coil-30
+            - tag: Cable
+              name: "Верёвка"
+              icon:
+                sprite: Objects/Tools/cable-coils.rsi
+                state: coil-30
+              doAfter: 5
+    - node: bowstring
+      entity: bowstring
 
 # Тканная верёвка
 
@@ -25,7 +58,7 @@
           steps:
             - material: Cloth
               amount: 2
-              doAfter: 16
+              doAfter: 8
     - node: ClothCable
       entity: ClothCable
 
@@ -60,7 +93,7 @@
               icon:
                 sprite: Objects/Specific/Hydroponics/wheat.rsi
                 state: produce
-              doAfter: 20
+              doAfter: 9
     - node: WheatCable1
       entity: WheatCable
 
@@ -120,7 +153,7 @@
               icon:
                 sprite: Objects/Specific/Hydroponics/wheat.rsi
                 state: produce
-              doAfter: 30
+              doAfter: 16
     - node: WheatBacket
       entity: WheatBacket
 
@@ -177,7 +210,7 @@
               icon:
                 sprite: Objects/Specific/Hydroponics/wheat.rsi
                 state: produce
-              doAfter: 13
+              doAfter: 9
     - node: WheatBackpack
       entity: WheatBackpack
 

@@ -1,0 +1,32 @@
+- type: entity
+  parent: BaseArrow
+  id: ArrowStone
+  name: "Каменная стрела"
+  description: "Хуже, чем кремниевая, но лучше чем ничего"
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/arrows.rsi
+    layers:
+    - state: tail
+      color: red
+    - state: rod
+      color: brown
+    - state: tip
+    - state: solution1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 29
+  - type: Construction
+    graph: ArrowStone
+    node: ArrowStone
+  - type: MeleeWeapon
+    attackRate: 0.9
+    damage:
+      types:
+        Slash: 2
+        Piercing: 3
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg

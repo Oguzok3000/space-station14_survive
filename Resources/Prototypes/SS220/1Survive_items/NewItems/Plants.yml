@@ -1,3 +1,22 @@
+- type: entity
+  id: BaseStructure1
+  parent: BaseStructure
+  abstract: true
+  components:
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.1"
+        density: 190
+        hard: false
+        mask:
+        - FullTileMask
+        layer:
+        - FullTileMask
+
+
 # ▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮
 
 # ПШЕНО СОЛОМА ПЕШНО САЛОМЫЫЫЫ
@@ -29,7 +48,7 @@
   name: "Сбор Урожая..."
   id: SpawnWheatBushel
   description: "Ожидайте..."
-  parent: BaseStructure
+  parent: BaseStructure1
   components:
   - type: Sprite
     noRot: true
@@ -79,7 +98,7 @@
   name: "Сбор урожая..."
   id: SpawnFoodBerries
   description: "Ожидайте..."
-  parent: BaseStructure
+  parent: BaseStructure1
   components:
   - type: Sprite
     noRot: true
@@ -128,7 +147,7 @@
   name: "Сбор урожая..."
   id: SpawnFoodBungo
   description: "Ожидайте..."
-  parent: BaseStructure
+  parent: BaseStructure1
   components:
   - type: Sprite
     noRot: true
@@ -175,7 +194,7 @@
   name: "Сбор урожая..."
   id: SpawnFoodMushroom
   description: "Ожидайте..."
-  parent: BaseStructure
+  parent: BaseStructure1
   components:
   - type: Sprite
     noRot: true
@@ -224,7 +243,7 @@
   name: "Сбор урожая..."
   id: SpawnCottonBol
   description: "Ожидайте..."
-  parent: BaseStructure
+  parent: BaseStructure1
   components:
   - type: Sprite
     noRot: true
@@ -273,7 +292,7 @@
   name: "Сбор урожая..."
   id: SpawnLeavesCannabis
   description: "Ожидайте..."
-  parent: BaseStructure
+  parent: BaseStructure1
   components:
   - type: Sprite
     noRot: true
@@ -286,6 +305,152 @@
     intervalSeconds: 1
     minimumEntitiesSpawned: 4
     maximumEntitiesSpawned: 6
+  - type: TimedDespawn 
+    lifetime: 1.01
+  - type: Physics
+    bodyType: Static
+
+# ▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮
+
+# АЛОЭЭЭЭ
+
+- type: entity
+  name: "Дикое алоэ"
+  parent: Spaceshroom
+  id: PlantAloe
+  suffix: Structure
+  description: "Растение, содержащий лекарственный сок. Помогает справляться с проблемами на коже, а также с переохлаждениями или перегревами на солнце"
+  components:
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/aloe.rsi
+      state: harvest
+    - type: Gatherable
+      toolWhitelist:
+        components:
+          - Hands
+      loot:
+        All: aloe123
+- type: entityLootTable
+  id: aloe123
+  entries:
+  - id: SpawnFoodAloe
+    amount: 4
+    maxAmount: 5
+
+- type: entity
+  name: "Сбор урожая..."
+  id: SpawnFoodAloe
+  description: "Ожидайте..."
+  parent: BaseStructure1
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: Objects/Specific/Hydroponics/aloe.rsi
+    state: stage-1
+  - type: Timer
+  - type: TimedSpawner
+    prototypes:
+    - FoodAloe
+    intervalSeconds: 1
+    minimumEntitiesSpawned: 3
+    maximumEntitiesSpawned: 6
+  - type: TimedDespawn 
+    lifetime: 1.01
+  - type: Physics
+    bodyType: Static
+
+# ▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮
+
+# ГАЛАКТОЧЕРТОПОЛОООХ
+
+- type: entity
+  name: "Дикий галакточертополох"
+  parent: Spaceshroom
+  id: PlantGalaxythistle
+  suffix: Structure
+  description: "Растение, содержащий лекарственный сок. Помогает справиться с токсинами внутри организма"
+  components:
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/galaxythistle.rsi
+      state: harvest
+    - type: Gatherable
+      toolWhitelist:
+        components:
+          - Hands
+      loot:
+        All: Galaxythistle123
+- type: entityLootTable
+  id: Galaxythistle123
+  entries:
+  - id: SpawnFoodGalaxythistle
+    amount: 4
+    maxAmount: 5
+
+- type: entity
+  name: "Сбор урожая..."
+  id: SpawnFoodGalaxythistle
+  description: "Ожидайте..."
+  parent: BaseStructure1
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: Objects/Specific/Hydroponics/galaxythistle.rsi
+    state: stage-1
+  - type: Timer
+  - type: TimedSpawner
+    prototypes:
+    - FoodGalaxythistle
+    intervalSeconds: 1
+    minimumEntitiesSpawned: 3
+    maximumEntitiesSpawned: 4
+  - type: TimedDespawn 
+    lifetime: 1.01
+  - type: Physics
+    bodyType: Static
+# ▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮
+
+# АМБРОЗИЯ ВУЛЬГАРИС
+
+- type: entity
+  name: "Дикая амброзия вульгарис"
+  parent: Spaceshroom
+  id: PlantAmbrosia
+  suffix: Structure
+  description: "Растение, содержащий лекарственный и немного наркотический сок. Вызывает судороги и малое отравление, однако способен лечить механические и дермалические повреждения. Лучше всего заедать галакточертополохом, потому что он стабилизирует амброзию и уменьшает вред организму"
+  components:
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/ambrosia_vulgaris.rsi
+      state: harvest
+    - type: Gatherable
+      toolWhitelist:
+        components:
+          - Hands
+      loot:
+        All: ambrosia123
+- type: entityLootTable
+  id: ambrosia123
+  entries:
+  - id: SpawnAmbrosia
+    amount: 4
+    maxAmount: 5
+
+- type: entity
+  name: "Сбор урожая..."
+  id: SpawnAmbrosia
+  description: "Ожидайте..."
+  parent: BaseStructure1
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: Objects/Specific/Hydroponics/ambrosia_vulgaris.rsi
+    state: stage-2
+  - type: Timer
+  - type: TimedSpawner
+    prototypes:
+    - FoodAmbrosiaVulgaris
+    intervalSeconds: 1
+    minimumEntitiesSpawned: 3
+    maximumEntitiesSpawned: 4
   - type: TimedDespawn 
     lifetime: 1.01
   - type: Physics
