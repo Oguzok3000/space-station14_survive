@@ -1,4 +1,34 @@
 - type: entity
+  name: "Спавнер Тарантулов"
+  id: SpawnSpiderAngry
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+  - type: ConditionalSpawner
+    prototypes:
+    - MobGiantSpiderAngry
+  - type: TimedDespawn 
+    lifetime: 5
+
+- type: entity
+  name: "Спавнер длинной ветки"
+  id: SpawnLongBranch
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - state: icon
+      sprite: SS220/1Textures/BranchLong.rsi
+  - type: ConditionalSpawner
+    prototypes:
+    - LongBranch
+  - type: TimedDespawn 
+    lifetime: 5
+
+- type: entity
   name: "Спавнер Ветки"
   id: SpawnBranch
   parent: MarkerBase
@@ -48,7 +78,7 @@
 
 - type: entity
   name: "Спавнер Дикой Змеи"
-  id: SpawnMobSnakeDick
+  id: SpawnMobSnake220
   parent: MarkerBase
   components:
   - type: Sprite
@@ -58,7 +88,7 @@
       sprite: Mobs/Animals/snake.rsi
   - type: ConditionalSpawner
     prototypes:
-    - MobSnakeDick
+    - MobSnake220
   - type: TimedDespawn 
     lifetime: 5
 

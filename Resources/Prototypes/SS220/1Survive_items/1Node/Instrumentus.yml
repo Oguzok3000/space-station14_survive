@@ -25,22 +25,10 @@
               icon:
                 sprite: Objects/Tools/cable-coils.rsi
                 state: coilhv-30
-            - tag: Branch
-              name: "Ветка"
-              icon:
-                sprite: SS220/1Textures/Branch.rsi
-                state: icon
-            - tag: Branch
-              name: "Ветка"
-              icon:
-                sprite: SS220/1Textures/Branch.rsi
-                state: icon
-            - tag: Stone
-              name: "Камень"
-              icon:
-                sprite: SS220/1Textures/Stone.rsi
-                state: icon
-              doAfter: 4
+            - material: Branch
+              amount: 1
+            - material: Stone
+              amount: 1
     - node: Tinder
       entity: Tinder
 
@@ -131,11 +119,8 @@
               icon:
                 sprite: Objects/Tools/cable-coils.rsi
                 state: coilhv-30
-            - tag: Branch
-              name: "Ветка"
-              icon:
-                sprite: SS220/1Textures/Branch.rsi
-                state: icon
+            - material: Branch
+              amount: 1
             - tag: HoePART
               name: "Гребешок тяпки"
               icon:
@@ -237,16 +222,8 @@
               icon:
                 sprite: Objects/Tools/cable-coils.rsi
                 state: coilhv-30
-            - tag: Branch
-              name: "Ветка"
-              icon:
-                sprite: SS220/1Textures/Branch.rsi
-                state: icon
-            - tag: Branch
-              name: "Ветка"
-              icon:
-                sprite: SS220/1Textures/Branch.rsi
-                state: icon
+            - material: Branch
+              amount: 2
             - tag: clippersPART
               name: "Щепцы секатора"
               icon:
@@ -330,11 +307,8 @@
               icon:
                 sprite: Objects/Materials/ore.rsi
                 state: iron
-            - tag: Stone
-              name: "Камень"
-              icon:
-                sprite: SS220/1Textures/Stone.rsi
-                state: icon
+            - material: Stone
+              amount: 1
             - tag: StoneSharp
               name: "Заострённый камень"
               icon:
@@ -377,11 +351,8 @@
               icon:
                 sprite: Objects/Tools/cable-coils.rsi
                 state: coilhv-30
-            - tag: Branch
-              name: "Ветка"
-              icon:
-                sprite: SS220/1Textures/Branch.rsi
-                state: icon
+            - material: Branch
+              amount: 1
             - tag: PickaxePART
               name: "Кайло кирки"
               icon:

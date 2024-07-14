@@ -21,12 +21,12 @@
   graph:
     - node: start
       edges:
-        - to: incompletePo4va
+        - to: incompletePileOfSoil
           steps:
             - tag: FertileSoil
               name: "плодородную почву"
               icon:
-                sprite: SS220/1Textures/SoilPile.rsi
+                sprite: SS220/1Textures/Soil.rsi
                 state: icon
               doAfter: 5
         
@@ -41,7 +41,7 @@
           steps:
             - tool: Prying
               doAfter: 5
-        - to: Po4va123
+        - to: PileOfSoilComplete
           steps:
             - tool: Dig
               doAfter: 10

@@ -1,0 +1,108 @@
+# ▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮
+# Лук
+
+- type: construction
+  name: "Лук"
+  id: ImprovisedBow
+  graph: ImprovisedBow
+  startNode: start
+  targetNode: ImprovisedBow
+  category: 1new-weapons
+  description: A shoddily constructed bow made out of wood and cloth. It's not much, but it's gotten the job done for millennia.
+  icon: { sprite: Objects/Weapons/Guns/Bow/bow.rsi, state: unwielded }
+  objectType: Item
+
+- type: constructionGraph
+  id: ImprovisedBow
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: ImprovisedBow
+      steps:
+      - material: LongBranch
+        amount: 1
+      - material: Stone
+        amount: 2
+#      - material: Cloth
+#        amount: 1
+      - tag: bowstring
+        name: "Тетива"
+        icon:
+          sprite: Objects/Tools/cable-coils.rsi
+          state: coil-20
+        doAfter: 14
+  - node: ImprovisedBow
+    entity: BowImprovised
+
+# ▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮
+
+- type: construction
+  name: "Кремниевая трела"
+  id: Arrow
+  graph: Arrow
+  startNode: start
+  targetNode: Arrow
+  category: 1new-weapons
+  description: "Первобытная стрела, которой можно стрелять из лука. Хорошо протыкает противника"
+  icon: { sprite: Objects/Weapons/Guns/Bow/bow.rsi, state: wielded-arrow }
+  objectType: Item
+
+- type: constructionGraph
+  id: Arrow
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: Arrow
+      steps:
+      - material: ChickenFeather
+        amount: 1
+      - material: Branch
+        amount: 1
+      - material: Flint
+        amount: 1
+        doAfter: 1.5
+
+  - node: Arrow
+    entity: ArrowRegular
+
+# ▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮
+
+
+- type: construction
+  name: "Каменная стрела"
+  id: ArrowStone
+  graph: ArrowStone
+  startNode: start
+  targetNode: ArrowStone
+  category: 1new-weapons
+  description: "Первобытная стрела, которой можно стрелять из лука. Хуже, чем кремниевая"
+  icon: { sprite: Objects/Weapons/Guns/Bow/bow.rsi, state: wielded-arrow }
+  objectType: Item
+
+- type: constructionGraph
+  id: ArrowStone
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: ArrowStone
+      steps:
+      - material: ChickenFeather
+        amount: 1
+      - material: Branch
+        amount: 1
+      - tag: StoneSharp
+        name: "Заострённый камень"
+        icon:
+          sprite: SS220/1Textures/Stone.rsi
+          state: icon-1
+        doAfter: 1.4
+
+  - node: ArrowStone
+    entity: ArrowStone
+
+# ▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮
+
+

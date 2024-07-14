@@ -1357,6 +1357,7 @@
   - type: Tag
     tags:
     - Ambrosia
+    - Fruit 
 
 - type: entity
   name: ambrosia deus

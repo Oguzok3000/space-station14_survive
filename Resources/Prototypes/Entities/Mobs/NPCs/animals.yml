@@ -217,6 +217,8 @@
       amount: 1
     - id: MaterialBones1
       amount: 2
+    - id: ChickenFeather
+      amount: 10
   - type: InteractionPopup
     successChance: 0.8
     interactSuccessString: petting-success-bird
@@ -236,6 +238,19 @@
   - type: NpcFactionMember
     factions:
     - Passive
+  - type: NPCRetaliation
+    attackMemoryLength: 18
+  - type: FactionException
+  - type: HTN
+    rootTask:
+      task: RuminantHostileCompound
+  - type: Timer
+  - type: TimedSpawner
+    prototypes:
+    - ChickenFeather
+    intervalSeconds: 275
+    minimumEntitiesSpawned: 0
+    maximumEntitiesSpawned: 2
 
 - type: entity
   parent: MobChicken
@@ -261,6 +276,12 @@
         Base: dead-1
       Dead:
         Base: dead-1
+  - type: TimedSpawner
+    prototypes:
+    - ChickenFeather
+    intervalSeconds: 300
+    minimumEntitiesSpawned: 0
+    maximumEntitiesSpawned: 2
 
 - type: entity
   parent: MobChicken
@@ -286,6 +307,12 @@
         Base: dead-2
       Dead:
         Base: dead-2
+  - type: TimedSpawner
+    prototypes:
+    - ChickenFeather
+    intervalSeconds: 325
+    minimumEntitiesSpawned: 0
+    maximumEntitiesSpawned: 2
 
 - type: entity
   id: FoodEggChickenFertilized
@@ -770,7 +797,7 @@
     - id: FoodMeat
       amount: 5
     - id: MaterialBones1
-      amount: 6
+      amount: 7
     - id: Roga
       amount: 1
   - type: Grammar
@@ -933,7 +960,7 @@
     - id: FoodMeat
       amount: 4
     - id: MaterialBones1
-      amount: 6
+      amount: 8
   - type: Grammar
     attributes:
       gender: female # Here because of UdderComponent

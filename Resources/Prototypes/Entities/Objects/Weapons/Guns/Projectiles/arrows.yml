@@ -63,7 +63,7 @@
 - type: entity
   parent: BaseArrow
   id: ArrowRegular
-  name: arrow
+  name: "Кремниевая стрела"
   description: You can feel the power of the steppe within you.
   components:
   - type: Sprite
@@ -73,13 +73,25 @@
     - state: rod
       color: brown
     - state: tip
+      color: Darkgray
     - state: solution1
       map: ["enum.SolutionContainerLayers.Fill"]
       visible: false
   - type: Projectile
     damage:
       types:
-        Piercing: 35
+        Piercing: 42
+  - type: Construction
+    graph: Arrow
+    node: Arrow
+  - type: MeleeWeapon
+    attackRate: 0.9
+    damage:
+      types:
+        Slash: 4
+        Piercing: 5
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
 
 - type: entity
   parent: BaseArrow

@@ -16,30 +16,65 @@
   - type: Sprite
     sprite: SS220/1Textures/Branch.rsi
     state: icon
-#    layers:
-#    - state: Palka
-#      map: ["base"]
+    layers:
+    - state: Branch
+      map: ["base"]
   - type: Item
     sprite: SS220/1Textures/Branch.rsi
-    size: Small
+    size: Normal
   - type: Tag
     tags:
     - Branch
   - type: Stack
     stackType: Branch
     count: 1
-#    baseLayer: base
-#    layerStates:
-#    - Palka
-#    - Palka_2
-#    - Palka_3
-#    - Palka_4
-#    - Palka_5
+    baseLayer: base
+    layerStates:
+    - Branch
+    - Branch_2
+    - Branch_3
+    - Branch_4
+    - Branch_5
 
 - type: stack
   id: Branch
   name: "Ветка"
+  icon: { sprite: SS220/1Textures/Branch.rsi, state: icon }
   spawn: Branch
+  maxCount: 30
+
+# Длинная ветка
+
+- type: entity
+  parent: BaseItem
+  id: LongBranch
+  name: "Длинная ветка"
+  description: "Абсолютно массивная, крепко взбитая, длиннющая, пригождающаяся в любом хозяйстве!"
+  components:
+  - type: MeleeWeapon
+    attackRate: 0.7
+    wideAnimationRotation: -135
+    damage:
+      types:
+        Blunt: 9
+  - type: Sprite
+    sprite: SS220/1Textures/BranchLong.rsi
+    state: icon
+  - type: Item
+    sprite: SS220/1Textures/BranchLong.rsi
+    size: Huge
+  - type: Tag
+    tags:
+    - LongBranch
+  - type: Stack
+    stackType: LongBranch
+    count: 1
+
+- type: stack
+  id: LongBranch
+  name: "Длинная ветка"
+  icon: { sprite: SS220/1Textures/BranchLong.rsi, state: icon }
+  spawn: LongBranch
   maxCount: 30
 
 # ▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮
@@ -60,20 +95,18 @@
     wideAnimationRotation: -135
     damage:
       types:
-        Blunt: 8
-        Structural: 7
+        Blunt: 7
     soundHit:
       collection: MetalThud
   - type: DamageOtherOnHit
     damage:
       types:
         Blunt: 5
-        Structural: 5
   - type: Sprite
     sprite: SS220/1Textures/Stone.rsi
     state: icon
   - type: Item
-    size: Tiny
+    size: Normal
   - type: Destructible
     thresholds:
     - trigger:
@@ -100,6 +133,16 @@
   - type: Tag
     tags:
     - Stone
+  - type: Stack
+    stackType: Stone
+    count: 1
+
+- type: stack
+  id: Stone
+  name: "Камень"
+  icon: { sprite: SS220/1Textures/Stone.rsi, state: icon }
+  spawn: Stone
+  maxCount: 30
 
 # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
@@ -110,7 +153,7 @@
   description: "Этим можно резать! А ещё с помощью этого можно сделать каменную чашу из обычного камня"
   components:
   - type: MeleeWeapon
-    attackRate: 1.4
+    attackRate: 1.2
     damage:
       types:
         Slash: 5
@@ -123,7 +166,6 @@
     damage:
       types:
         Slash: 3
-        Structural: 5
   - type: Tool
     qualities:
       - Slicing
@@ -133,6 +175,51 @@
   - type: Tag
     tags:
     - StoneSharp
+
+- type: entity
+  parent: BaseItem
+  id: Flint
+  name: "Кремень"
+  description: "Немного остр. Если объединить с куском неплавленного железа можно произвести огонь"
+  components:
+  - type: MeleeWeapon
+    damage:
+      types:
+        Slash: 4
+  - type: Sprite
+    sprite: SS220/1Textures/Flint.rsi
+    state: icon
+  - type: Item
+    size: Normal
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Slash: 3
+  - type: Tool
+    qualities:
+      - Slicing
+    useSound:
+      path: /Audio/Items/Culinary/chop.ogg
+    speedModifier: 0.09
+#  - type: Tool
+#    qualities:
+#      - Fire
+#    useSound:
+#      path: /Audio/Items/Flare/flare_on.ogg
+#    speedModifier: 0.1
+  - type: Tag
+    tags:
+    - Flint
+  - type: Stack
+    stackType: Flint
+    count: 1
+
+- type: stack
+  id: Flint
+  name: "Кремень"
+  icon: { sprite: SS220/1Textures/Flint.rsi, state: icon }
+  spawn: Flint
+  maxCount: 30
 
 # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
@@ -171,6 +258,36 @@
     tags:
     - FlaskStone
 
+
+
+# ▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮
+# ▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮
+
+- type: entity
+  parent: BaseItem
+  id: ChickenFeather
+  name: "Куриное перо"
+  description: "Пригодится для создания стрелы"
+  components:
+  - type: Sprite
+    sprite: SS220/1Textures/ChickenFeather.rsi
+    state: icon
+  - type: Item
+    size: Normal
+  - type: Tag
+    tags:
+    - ChickenFeather
+  - type: Stack
+    stackType: ChickenFeather
+    count: 1
+
+- type: stack
+  id: ChickenFeather
+  name: "Куриное перо"
+  icon: { sprite: SS220/1Textures/ChickenFeather.rsi, state: icon }
+  spawn: ChickenFeather
+  maxCount: 10
+
 # ▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮
 # ▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮
 
@@ -192,7 +309,7 @@
 # ▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮
 # ▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮
 
-# Соломка и верёвка
+# Верёвки
 
 - type: entity
   parent: BaseItem
@@ -229,6 +346,22 @@
   - type: Construction
     graph: ClothCable
     node: ClothCable
+
+- type: entity
+  parent: WheatCable
+  id: bowstring
+  name: "Тетива"
+  description: "Пригодится для создания лука"
+  components:
+  - type: Sprite
+    sprite: Objects/Tools/cable-coils.rsi
+    state: coil-20
+  - type: Tag
+    tags:
+    - bowstring
+  - type: Construction
+    graph: bowstring
+    node: bowstring
 
 # ▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮
 # ▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮
@@ -322,7 +455,7 @@
       behaviors:
       - !type:SpawnEntitiesBehavior
         spawn:
-          Glina:
+          Clay:
             min: 0
             max: 1
       - !type:DoActsBehavior
@@ -333,7 +466,7 @@
     maxItemSize: Normal
     whitelist:
       tags:
-        - Glina
+        - Clay
   - type: StorageFill
     contents:
     - id: Clay
