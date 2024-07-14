@@ -590,7 +590,7 @@
         frequency: 1.09
       threshold: 0.986
       entities:
-        - RastokWheat
+        - PlantWheat
 
     - !type:BiomeEntityLayer
       allowedTiles:
@@ -601,7 +601,7 @@
         frequency: 1.09
       threshold: 0.977
       entities:
-        - RastokBerries
+        - PlantBerries
 
     - !type:BiomeEntityLayer
       allowedTiles:
@@ -612,7 +612,7 @@
         frequency: 1.09
       threshold: 0.98
       entities:
-        - RastokBungo
+        - PlantBungo
 
     - !type:BiomeEntityLayer
       allowedTiles:
@@ -623,7 +623,7 @@
         frequency: 1.09
       threshold: 0.991
       entities:
-        - RastokCotton
+        - PlantCotton
 
 
     - !type:BiomeEntityLayer
@@ -635,7 +635,7 @@
         frequency: 1.09
       threshold: 0.982
       entities:
-        - RastokMushroom
+        - PlantMushroom
 
 
     - !type:BiomeEntityLayer
@@ -647,4 +647,4 @@
         frequency: 1.09
       threshold: 1.01
       entities:
-        - RastokCannabis
+        - PlantCannabis
