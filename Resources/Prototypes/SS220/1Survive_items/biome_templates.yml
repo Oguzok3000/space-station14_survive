@@ -649,12 +649,22 @@
       entities:
         - PlantMushroom
 
+    - !type:BiomeEntityLayer
+      allowedTiles:
+        - FloorPlanetGrass
+      noise:
+        seed: 94
+        noiseType: OpenSimplex2
+        frequency: 1.09
+      threshold: 0.999
+      entities:
+        - PlantCannabis
 
     - !type:BiomeEntityLayer
       allowedTiles:
-        - FloorPlanetSand
+        - FloorAsteroidSand
       noise:
-        seed: 83
+        seed: 63
         noiseType: OpenSimplex2
         frequency: 1.09
       threshold: 0.997
@@ -663,23 +673,23 @@
 
     - !type:BiomeEntityLayer
       allowedTiles:
-        - FloorPlanetSand
+        - FloorAsteroidSand
       noise:
-        seed: 83
+        seed: 76
         noiseType: OpenSimplex2
         frequency: 1.09
-      threshold: 0.999
+      threshold: 0.992
       entities:
         - PlantAmbrosia
 
     - !type:BiomeEntityLayer
       allowedTiles:
-        - FloorAsteroidGrass
+        - FloorPlanetGrass
       noise:
         seed: 77
         noiseType: OpenSimplex2
         frequency: 1.09
-      threshold: 0.997
+      threshold: 0.992
       entities:
         - PlantAloe
 
@@ -690,6 +700,6 @@
         seed: 95
         noiseType: OpenSimplex2
         frequency: 1.09
-      threshold: 0.998
+      threshold: 0.989
       entities:
         - PlantGalaxythistle
